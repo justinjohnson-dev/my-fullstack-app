@@ -1,0 +1,13 @@
+ul {
+    list-style: none;
+    padding: 0;
+    width: 30%;
+    margin: auto;
+    color: white;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 3rem;
+    color:white;
+}
