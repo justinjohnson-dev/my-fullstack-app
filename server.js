@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const app = express();
 
 var path = require("path");
@@ -18,12 +19,24 @@ app.get('/api/welcome', (req, res) => {
 
 */
 
+// Connect to mongoose
+
+
+// Server being ran on port 5000
+const PORT = process.env.PORT || 5000;
+
+
 // Sending data to an endpoint called /html for our client to display
 app.get('/api/html',function(req,res){
     res.sendFile(path.join(__dirname+'/index.html'));
 });
 
-// Server being ran on port 5000
-const PORT = process.env.PORT || 5000;
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static( 'client/build' ));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html')); // This is relative path
+    });
+}
 
 app.listen(PORT, () => `Server running on port ${PORT}`);
