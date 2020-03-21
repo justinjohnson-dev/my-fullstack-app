@@ -15,7 +15,7 @@ class Navigation extends React.Component {
         
         return (
             <nav>
-                <h3 className="logo">Logo</h3>
+                <h3 className="logo">JJ Brand</h3>
                 <ul className="nav-links">
                     <Link className='nav-style' to='/'>
                         <li>Home</li>
