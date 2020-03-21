@@ -1,127 +1,54 @@
-.FormCenter {
-    width: 25%;
-    margin: 50px auto;
+.login-container {
+  font-family: 'Roboto', sans-serif;
+  width: 20%;
+  margin: 5% auto;
+  text-align: center;
 }
 
-
-.PageSwitcher {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 10%;
+.form-group {
+  padding: 10px;
 }
 
-.PageSwitcher__Item {
-    background-color: #4C5D72;
-    color: #9DA6B1;
-    padding: 10px 25px;
-    cursor: pointer;
-    font-size: .9em;
-    border: none;
-    outline: none;
-    display: inline-block;
-    text-decoration: none;
+.inner-div {
+  border: solid grey 2px;
+  margin: 10px 0px;
 }
 
-.PageSwitcher__Item--Active {
-    background-color: #5ED0C0;
-    color: white;
+.button {
+  border-radius: 9px;
+  background-color: rgb(223, 146, 94);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 5px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
 }
 
-.PageSwitcher__Item:first-child {
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-}
-.PageSwitcher__Item:last-child {
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
 
-.FormTitle {
-    color: #707C8B;
-    font-weight: 300;
-    margin-bottom: 50px;
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
 }
 
-.FormTitle__Link {
-    color: #707C8B;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1.7em;
-    margin: 0 10px;
-    padding-bottom: 5px;
+.button:hover span {
+  padding-right: 25px;
 }
 
-.FormTitle__Link:first-child {
-    margin-left: 0;
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
-
-.FormTitle__Link--Active {
-    color: white;
-    border-bottom: 1px solid #199087;
-}
-
-.FormField {
-    margin-bottom: 40px;
-}
-
-.FormField__Label {
-    display: block;
-    text-transform: uppercase;
-    font-size: .9em;
-    color: white;
-}
-.FormField__Input {
-    width: 85%;
-    background-color: transparent;
-    border: none;
-    color: white;
-    outline: none;
-    border-bottom: 1px solid #445366;
-    font-size: 1em;
-    font-weight: 300;
-    padding-bottom: 10px;
-    margin-top: 10px;
-}
-
-.FormField__Input::placeholder {
-    color: #616E7F;
-}
-
-.FormField__Button {
-    background-color: #52C4B9;
-    color: white;
-    border: none;
-    outline: none;
-    border-radius: 25px;
-    padding: 15px 70px;
-    font-size: .8em;
-    font-weight: 500;
-}
-
-.FormField__Link {
-    color: #66707D;
-    text-decoration: none;
-    display: inline-block;
-    border-bottom: 1.5px solid #225E62;
-    padding-bottom: 5px;
-}
-
-.FormField__CheckboxLabel {
-    color: #646F7D;
-    font-size: .9em;
-}
-
-.FormField__Checkbox {
-    position: relative;
-    top: 1.5px;
-}
-
-.FormField__TermsLink {
-    color: white;
-    border-bottom: 1px solid #199087;
-    text-decoration: none;
-    display: inline-block;
-    padding-bottom: 2px;
-    margin-left: 5px;
-}
-  
