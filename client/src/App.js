@@ -1,19 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Developer from './components/developer/developer'
-import Login from './components/login/login';
+import { LoginPage } from './components/login/login';
 import Navigation from './components/navigation/navigation';
-import Home from './components/home/home';
+import { HomePage } from './components/home/home';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { PrivateRoute } from './components/private_route/private_route';
 
 function App() {
   return (
     <Router>
     <Navigation />
         <Switch>
-          <Route path="/" exact component={Login} />
-          <Route path="/home" component={Home} />
+          <PrivateRoute path="/" exact component={HomePage} />
+          <Route path="/login" component={LoginPage} />
         </Switch>
     </Router>
   );
