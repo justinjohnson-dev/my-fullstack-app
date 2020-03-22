@@ -55,8 +55,30 @@ exports.signout = (req, res) => {
     res.json({message: "Signout successful"});
 };
 
-
+// using the express JWT package
 exports.requireSignIn = expressJwt({
     secret: process.env.JWT_SERCRET,
     userProperty: 'auth'
 });
+
+// auth user so that they can view their profile
+exports.isAuth = (req, res, next) => {
+    let user = req.profile && req.auth && req.profile._id == req.auth._id
+    if (!user) {
+        return res.status(403).json({
+            error: "Access denied"
+        });
+    }
+    next();
+};
+
+// if user role === 1, they are an admin
+exports.isAdmin = (req, res, next) => {
+    if (req.profile.role === 0) {
+        return res.status(403).json({
+            error: "Must be a Admin. Access denied"
+        });
+    }
+
+    next();
+};
