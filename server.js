@@ -7,7 +7,7 @@ const expressValidator = require('express-validator');
 
 require('dotenv').config();
 // import routes
-const userRoutes = require('./routes/user');
+const userRoutes = require('./routes/authentication');
 
 // app
 const app = express();
