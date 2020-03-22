@@ -7,7 +7,8 @@ const expressValidator = require('express-validator');
 
 require('dotenv').config();
 // import routes
-const userRoutes = require('./routes/authentication');
+const authenticationRoutes = require('./routes/authentication');
+const userRoutes = require('./routes/user');
 
 // app
 const app = express();
@@ -30,6 +31,7 @@ app.use(cookieParser());
 app.use(expressValidator());
 
 // routes middleware
+app.use("/api", authenticationRoutes);
 app.use("/api", userRoutes);
 
 // This is for our HEROKU deployment
