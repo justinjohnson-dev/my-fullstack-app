@@ -1,36 +1,38 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const morgan = require('morgan');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const expressValidator = require('express-validator');
+
+require('dotenv').config();
+// import routes
+const userRoutes = require('./routes/user');
+
+// app
 const app = express();
 
+// db connection
+mongoose.connect(process.env.DATABASE, {
+    useNewUrlParser: true,
+    useCreateIndex: true
+}).then(() => console.log('DB Connected'));
+
 var path = require("path");
-var mongo = require('mongodb');
-
-/*  Example of code that would send data through an API -
-    Will eventually use an endpoint to extract data from MongoDB
-
-app.get('/api/welcome', (req, res) => {
-    // This is where we would connect to mongoDB
-    const data = [
-        {id: 1, firstName: 'Justin', lastName: 'Johnson'}
-    ];
-
-    res.json(data);
-});
-
-*/
-
-// Connect to mongoose
-
 
 // Server being ran on port 5000
 const PORT = process.env.PORT || 5000;
 
+// middlewares
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(expressValidator());
 
-// Sending data to an endpoint called /html for our client to display
-app.get('/api/html',function(req,res){
-    res.sendFile(path.join(__dirname+'/index.html'));
-});
+// routes middleware
+app.use("/api", userRoutes);
 
+// This is for our HEROKU deployment
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static( 'client/build' ));
 
