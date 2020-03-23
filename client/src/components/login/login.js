@@ -52,7 +52,7 @@ class LoginPage extends React.Component {
             </div>
             <div className="form-group">
                 <label className="text-muted">Password</label>
-                <input onChange={this.handleChange} type="text" name='password' className="form-control" />
+                <input onChange={this.handleChange} type="password" name='password' className="form-control" />
             </div>
             <button onChange={this.handleSubmit} className="button"><span>Login</span></button>
             </form>
