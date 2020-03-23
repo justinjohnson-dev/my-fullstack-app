@@ -10,20 +10,20 @@ require('dotenv').config();
 // import routes
 const authenticationRoutes = require('./routes/authentication');
 const userRoutes = require('./routes/user');
+var path = require("path");
 
 // app
 const app = express();
 
+// Server being ran on port 5000
+const PORT = process.env.PORT || 5000;
+
 // db connection - adding env for creating database in heroku
-mongoose.connect(process.env.DATABASE || process.env.MONGODB_URI, {
+mongoose.connect( process.env.MONGODB_URI || 'mongodb://localhost/ecommerce', {
     useNewUrlParser: true,
     useCreateIndex: true
 }).then(() => console.log('DB Connected'));
 
-var path = require("path");
-
-// Server being ran on port 5000
-const PORT = process.env.PORT || 5000;
 
 // middlewares
 app.use(morgan('dev'));
