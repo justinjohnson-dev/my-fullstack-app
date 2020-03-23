@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './home.css';
+import Layout from '../navigation/layout'
 import { userService } from '../services/service'
 
 class HomePage extends React.Component {

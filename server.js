@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const expressValidator = require('express-validator');
+const cors = require('cors');
 
 require('dotenv').config();
 // import routes
@@ -13,8 +14,8 @@ const userRoutes = require('./routes/user');
 // app
 const app = express();
 
-// db connection
-mongoose.connect(process.env.DATABASE, {
+// db connection - adding env for creating database in heroku
+mongoose.connect(process.env.DATABASE || process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useCreateIndex: true
 }).then(() => console.log('DB Connected'));
@@ -29,6 +30,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(expressValidator());
+app.use(cors());
 
 // routes middleware
 app.use("/api", authenticationRoutes);

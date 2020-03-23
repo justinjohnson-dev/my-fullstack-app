@@ -2,6 +2,7 @@ import React from 'react';
 
 import './login.css';
 import { userService } from '../services/service';
+import { API } from '../../config';
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -52,7 +53,6 @@ class LoginPage extends React.Component {
         const { username, password, submitted, loading, error } = this.state;
         return (
             <div className="login-container">
-               
                     <div className="alert-info">
                         ~ Username and Password for testing ~<br /><hr/><br />
                         Username: test<br />
@@ -87,6 +87,22 @@ class LoginPage extends React.Component {
                     </form>
                 </div>
             </div>
+
+
+            // <form>
+            //     <div className="form-group">
+            //         <label className="text-muted">Email</label>
+            //         <input type="text" className="form-control" />
+            //     </div>
+            //     <div className="form-group">
+            //         <label className="text-muted">Password</label>
+            //         <input type="text" className="form-control" />
+            //     </div>
+            //     <div className="form-group">
+            //         <label className="text-muted">Name</label>
+            //         <input type="text" className="form-control" />
+            //     </div>
+            // </form>
         );
     }
 }
