@@ -1,17 +1,6 @@
-.login-container {
-  font-family: 'Roboto', sans-serif;
-  width: 20%;
-  margin: 5% auto;
+.login-alert {
   text-align: center;
-}
-
-.form-group {
-  padding: 10px;
-}
-
-.inner-div {
-  border: solid grey 2px;
-  margin: 10px 0px;
+  margin-top: 50px;
 }
 
 .button {

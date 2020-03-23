@@ -14,14 +14,6 @@ class HomePage extends React.Component {
         };
     }
 
-    componentDidMount() {
-        this.setState({ 
-            user: JSON.parse(localStorage.getItem('user')),
-            users: { loading: true }
-        });
-        userService.getAll().then(users => this.setState({ users }));
-    }
-
     render() {
         const { user, users } = this.state;
         return (

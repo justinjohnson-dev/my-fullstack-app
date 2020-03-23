@@ -44,15 +44,15 @@ class Signup extends React.Component {
         'Content-type': 'application/json'
       },
       body: JSON.stringify(this.state)
-    })
+    })  
     .then((result) => result.json())
     .then((info) => { console.log(info); })
   };
 
   render() {
-    const {name} = this.state 
     return (
       <form onSubmit={this.handleSubmit}>
+        <h2 className='login-alert'>Create Your Account!</h2>
         <div className="form-group">
             <label className="text-muted">Name</label>
             <input onChange={this.handleChange} type="text" name='name' className="form-control" />
@@ -65,7 +65,7 @@ class Signup extends React.Component {
             <label className="text-muted">Password</label>
             <input onChange={this.handleChange} type="text" name='password' className="form-control" />
         </div>
-        <button onChange={this.handleSubmit} className="button"><span>Submit</span></button>
+        <button onChange={this.handleSubmit} className="button create-button"><span>Create Account</span></button>
       </form>
     );
   }

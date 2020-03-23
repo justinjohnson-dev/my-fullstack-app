@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 // inventory schema for items that will be in the shop
+// TODO: still needs to be created 
 const categorySchema = new mongoose.Schema({
     name: {
         type: String,

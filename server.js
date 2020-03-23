@@ -6,6 +6,11 @@ const cookieParser = require('cookie-parser');
 const expressValidator = require('express-validator');
 const cors = require('cors');
 
+/*
+    Credit to Ryan Dhuyngel for his tutorials on helping to create a backend
+    environment in Node/Express
+*/
+
 require('dotenv').config();
 // import routes
 const authenticationRoutes = require('./routes/authentication');
