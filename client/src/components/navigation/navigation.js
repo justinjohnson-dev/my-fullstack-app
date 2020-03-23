@@ -16,19 +16,19 @@ class Navigation extends React.Component {
                 <ul className="nav-links">
                     
                     <li>
-                        <Link className='nav-style' to='/'>
+                        <Link className='nav-style links' to='/'>
                             Home
                         </Link>
                     </li>
 
                     <li>
-                        <Link className='nav-style' to='/login'>
+                        <Link className='nav-style links' to='/login'>
                             Login
                         </Link>
                     </li>
 
                     <li>
-                        <Link className='nav-style' to='/signup'>
+                        <Link className='nav-style links' to='/signup'>
                             Sign Up
                         </Link>
                     </li>

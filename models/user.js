@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const crypto = require('crypto');
 const uuidv1 = require('uuid/v1');
 
+// Creating user schema for storing
+// users into mongoDB
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -48,6 +50,7 @@ userSchema.virtual('password')
     return this._password
 })
 
+// methods that will authenticate and encrypt user passwords
 userSchema.methods = {
     authenticate: function(plainPassword) {
         return this.encryptPassword(plainPassword) === this.hashed_password;

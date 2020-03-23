@@ -2,3 +2,7 @@ form {
     margin: 0px auto;
     width: 30%;
 }
+
+.create-button {
+    width: 175px;
+}
