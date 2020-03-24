@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './home.css';
+import Layout from '../navigation/layout'
 import { userService } from '../services/service'
 
 class HomePage extends React.Component {
@@ -11,14 +12,6 @@ class HomePage extends React.Component {
             user: {},
             users: []
         };
-    }
-
-    componentDidMount() {
-        this.setState({ 
-            user: JSON.parse(localStorage.getItem('user')),
-            users: { loading: true }
-        });
-        userService.getAll().then(users => this.setState({ users }));
     }
 
     render() {

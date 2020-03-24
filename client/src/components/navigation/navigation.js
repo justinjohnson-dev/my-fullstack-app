@@ -1,14 +1,11 @@
 import React from 'react';
 import './navigation.css';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 
 
 class Navigation extends React.Component {
     constructor() {
         super();
-        this.state = {
-            data: null
-        };
     }
 
     render() {
@@ -17,9 +14,25 @@ class Navigation extends React.Component {
             <nav>
                 <h3 className="logo">JJ Brand</h3>
                 <ul className="nav-links">
-                    <Link className='nav-style' to='/'>
-                        <li>Home</li>
-                    </Link>
+                    
+                    <li>
+                        <Link className='nav-style links' to='/'>
+                            Home
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link className='nav-style links' to='/login'>
+                            Login
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link className='nav-style links' to='/signup'>
+                            Sign Up
+                        </Link>
+                    </li>
+                    
                 </ul>
             </nav>
         );

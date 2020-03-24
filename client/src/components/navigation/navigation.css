@@ -22,5 +22,11 @@ nav {
 
 .nav-style {
     color: white;
+}
+
+.links:hover {
+    color: orange;
     text-decoration: none;
+    font-size: larger;
+    line-height: 15pt;
 }
