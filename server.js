@@ -9,6 +9,8 @@ require('dotenv').config();
 // import routes
 const authenticationRoutes = require('./routes/authentication');
 const userRoutes = require('./routes/user');
+const categoryRoutes = require('./routes/category');
+const productRoutes = require('./routes/products');
 
 // app
 const app = express();
@@ -33,6 +35,8 @@ app.use(expressValidator());
 // routes middleware
 app.use("/api", authenticationRoutes);
 app.use("/api", userRoutes);
+app.use("/api", categoryRoutes);
+app.use("/api", productRoutes);
 
 // This is for our HEROKU deployment
 if (process.env.NODE_ENV === 'production') {
