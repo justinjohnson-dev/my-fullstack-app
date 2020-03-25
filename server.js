@@ -3,7 +3,13 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 const expressValidator = require('express-validator');
+
+/* 
+    Credit to Ryan Dhuyngel for his tutorials on helping to create a backend
+    environment in Node/Express
+*/
 
 require('dotenv').config();
 // import routes
@@ -31,6 +37,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(expressValidator());
+app.use(cors());
 
 // routes middleware
 app.use("/api", authenticationRoutes);
