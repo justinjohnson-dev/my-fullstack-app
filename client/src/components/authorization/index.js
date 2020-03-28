@@ -32,18 +32,18 @@ export const signIn = (user) => {
 
 
 // accessing local storage to keep users logged in
-export const authenticate = (data, callback) => {
+export const authenticate = (data, next) => {
     if(typeof window !== 'undefined') {
         localStorage.setItem('jwt', JSON.stringify(data))
-        callback();
+        next();
     }
 };
 
 
-export const signout = (callback) => {
+export const signout = (next) => {
     if(typeof window !== 'undefined') {
         localStorage.removeItem('jwt')
-        callback();
+        next();
         
         return fetch('http://localhost:5000/api/signout', {
             method: "GET"
@@ -52,5 +52,18 @@ export const signout = (callback) => {
         }).catch(err => {
             console.log(err);
         })
+    }
+};
+
+
+export const isAuthenticated = () => {
+    if(typeof window == 'undefined') {
+        return false;
+    }
+
+    if (localStorage.getItem('jwt')) {
+        return JSON.parse(localStorage.getItem('jwt'));
+    } else {
+        return false;
     }
 };
