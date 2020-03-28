@@ -12,6 +12,7 @@ const expressValidator = require('express-validator');
 
     Deploying to heroku:    heroku git:remote -a advanced-web-app-dev
                             heroku addons:create mongolab:sandbox
+                            git push heroku master
 */
 
 require('dotenv').config();
@@ -24,16 +25,16 @@ const productRoutes = require('./routes/products');
 // app
 const app = express();
 
-// db connection
-mongoose.connect(process.env.DATABASE, {
-    useNewUrlParser: true,
-    useCreateIndex: true
-}).then(() => console.log('DB Connected'));
-
 var path = require("path");
 
 // Server being ran on port 5000
 const PORT = process.env.PORT || 5000;
+
+// db connection - adding env for creating database in heroku
+mongoose.connect( process.env.MONGODB_URI || 'mongodb://localhost/ecommerce', {
+    useNewUrlParser: true,
+    useCreateIndex: true
+}).then(() => console.log('DB Connected'));
 
 // middlewares
 app.use(morgan('dev'));
