@@ -9,7 +9,7 @@ import { signIn, authenticate } from '../authorization/index'
 const Login = () => {
     const [values, setValues] = useState({
       email:'jjustin634@gmail.com',
-      password:'Gejjaz22!!',
+      password:'',
       error:'',
       load: false,
       redirectToReferrer: false
