@@ -18,8 +18,7 @@ class HomePage extends React.Component {
         const { user, users } = this.state;
         return (
             <div className="home-container">
-                <h1>Hello, {user.firstName}!</h1>
-                <p>You're logged in with React & Basic HTTP Authentication!!</p>
+                <h1>Hello!</h1>
                 <p className="message-logout">You can log back out by clicking the click below</p>
                 <p>
                     <Link className="logout-style" to="/login"><button className="button"><span>Logout</span></button></Link>

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { LoginPage } from './components/login/login';
+import Login from './components/login/login';
 import Navigation from './components/navigation/navigation';
 import { HomePage } from './components/home/home';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
@@ -12,8 +12,8 @@ function App() {
     <Router>
     <Navigation />
         <Switch>
-          <PrivateRoute path="/" exact component={HomePage} />
-          <Route path="/login" component={LoginPage} />
+          <Route path="/" exact component={HomePage} />
+          <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
         </Switch>
     </Router>

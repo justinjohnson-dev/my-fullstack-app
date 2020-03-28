@@ -1,63 +1,86 @@
-import React from 'react';
-
+import React, {useState} from 'react';
 import './login.css';
-import { userService } from '../services/service';
+import {Link, Redirect} from 'react-router-dom';
 import { API } from '../../config';
+import { signIn, authenticate } from '../authorization/index'
 
-class LoginPage extends React.Component {
-    constructor(props) {
-        super(props);
 
-        this.state = {
-            email: null,
-            password: null,
-        };
+
+const Login = () => {
+    const [values, setValues] = useState({
+      email:'jjustin634@gmail.com',
+      password:'Gejjaz22!!',
+      error:'',
+      load: false,
+      redirectToReferrer: false
+    });
+  
+    // Destructuring from state
+    const { email, password, load, error, redirectToReferrer } = values
+  
+    const handleChange = name => event => {
+      setValues({...values, error: false, [name]: event.target.value});
     }
-
-    handleChange = (event) => {
-        event.preventDefault();
-        this.setState({ 
-            [event.target.name]: event.target.value 
-        });
+  
+    const handleSubmit = (event) => {
+      event.preventDefault()
+      setValues({ ...values, error: false, load: true });
+  
+      signIn({ email, password })
+      .then(data => {
+        if(data.error) {
+          setValues({...values, error: data.error, load: false})
+        } else {
+          authenticate(data, () => {
+            setValues({
+                redirectToReferrer: true
+              })
+          })
+        }
+      });
     }
+  
+    const errorWhileSigningUp = () => (
+      <div className="alert alert-danger" style={{display: error ? '' : 'none'}}>{error}</div>
+    );
+  
+    const showLoading = () => (
+      load && (
+          <div className="alert alert-info">
+            <p>Loading...</p>
+          </div>)
+    );
 
-    handleSubmit = (event) => {
-        event.preventDefault();
-
-        const { email, password } = this.state;
-
-        const user = {
-            email,
-            password,
-        };
-
-        fetch('http://localhost:5000/api/signin' , {
-            method: "POST",
-            headers: {
-            'Content-type': 'application/json'
-            },
-            body: JSON.stringify(this.state)
-        })  
-        .then((result) => result.json())
-        .then((info) => { console.log(info); })
-    };
-
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit}>
-            <h2 className='login-alert'>Login To Your Account!</h2>
-            <div className="form-group">
-                <label className="text-muted">Email</label>
-                <input onChange={this.handleChange} type="text" name='email' className="form-control" />
-            </div>
-            <div className="form-group">
-                <label className="text-muted">Password</label>
-                <input onChange={this.handleChange} type="password" name='password' className="form-control" />
-            </div>
-            <button onChange={this.handleSubmit} className="button"><span>Login</span></button>
-            </form>
-        );
+    const redirectOurUser = () => {
+        if (redirectToReferrer) {
+            return <Redirect to="/" />
+        }
     }
-}
-
-export { LoginPage }; 
+  
+    const signUpForm = () => (
+      <form>
+        <h2 className='login-alert'>Login to your account!</h2>
+        <div className="form-group">
+            <label className="text-muted">Email</label>
+            <input onChange={handleChange('email')} type="email" value={email} className="form-control" />
+        </div>
+        <div className="form-group">
+            <label className="text-muted">Password</label>
+            <input onChange={handleChange('password')} type="password" value={password} className="form-control" />
+        </div>
+        <button onClick={handleSubmit} className="button create-button"><span>Login</span></button>
+      </form>
+    );
+  
+    return (
+      <div>
+        {showLoading()}
+        {errorWhileSigningUp()}
+        {redirectOurUser()}
+        {signUpForm()}
+      </div>
+    );
+  };
+  
+  
+export default Login;
