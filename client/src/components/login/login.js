@@ -8,7 +8,7 @@ import { signIn, authenticate, isAuthenticated } from '../authorization/index'
 
 const Login = () => {
     const [values, setValues] = useState({
-      email:'jjustin634@gmail.com',
+      email:'',
       password:'',
       error:'',
       load: false,
