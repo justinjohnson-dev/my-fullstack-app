@@ -9,6 +9,9 @@ const expressValidator = require('express-validator');
 /* 
     Credit to Ryan Dhuyngel for his tutorials on helping to create a backend
     environment in Node/Express
+
+    Deploying to heroku:    heroku git:remote -a advanced-web-app-dev
+                            heroku addons:create mongolab:sandbox
 */
 
 require('dotenv').config();
