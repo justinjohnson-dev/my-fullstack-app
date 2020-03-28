@@ -24,11 +24,23 @@ const Navigation = ( {history} ) => (
                 </Link>
             </li>
 
-            <li>
-                <Link className='nav-style links' style={isActive(history, '/user/dashboard')} to='/dashboard'>
-                    Dashboard
-                </Link>
-            </li>
+            
+            {isAuthenticated() && isAuthenticated().user.role === 0 && (
+                <li className="nav-item">
+                    <Link className='nav-style links' style={isActive(history, '/user/dashboard')} to='/user/dashboard'>
+                        User Dashboard
+                    </Link>
+                </li>
+            )}
+            
+            {isAuthenticated() && isAuthenticated().user.role === 1 && (
+                <li className="nav-item">
+                    <Link className='nav-style links' style={isActive(history, '/admin/dashboard')} to='/admin/dashboard'>
+                        Admin Dashboard
+                    </Link>
+                </li>
+            )}
+            
 
             {!isAuthenticated() && (
                 <Fragment>
@@ -47,7 +59,7 @@ const Navigation = ( {history} ) => (
             )}
 
             {isAuthenticated() && (
-                    <li>
+                <li>
                     <span className='nav-style links' 
                             style={{cursor: 'pointer', color: 'ffffff'}}
                             onClick={() => signout(() =>

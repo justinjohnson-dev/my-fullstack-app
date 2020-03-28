@@ -5,8 +5,10 @@ import Navigation from './components/navigation/navigation';
 import { HomePage } from './components/home/home';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import PrivateRoute from './components/private_route/private_route';
+import AdminRoute from './components/private_route/admin_route';
 import Signup from './components/signup/signup';
 import Dashboard from './components/dashboard/dashboard'
+import AdminDashboard from './components/dashboard/adminDashboard';
 
 
 function App() {
@@ -18,6 +20,7 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <PrivateRoute path="/user/dashboard" exact component={Dashboard} />
+          <AdminRoute path="/admin/dashboard" exact component={AdminDashboard} />
         </Switch>
     </Router>
   );

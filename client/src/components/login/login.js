@@ -60,6 +60,10 @@ const Login = () => {
                 return <Redirect to="/user/dashboard" />
             }
         }
+
+        if (isAuthenticated()) {
+            return <Redirect to="/" />
+        }
     }
   
     const signUpForm = () => (
