@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './login.css';
 import {Link, Redirect} from 'react-router-dom';
 import { API } from '../../config';
-import { signIn, authenticate } from '../authorization/index'
+import { signIn, authenticate, isAuthenticated } from '../authorization/index'
 
 
 
@@ -17,6 +17,7 @@ const Login = () => {
   
     // Destructuring from state
     const { email, password, load, error, redirectToReferrer } = values
+    const { user } = isAuthenticated();
   
     const handleChange = name => event => {
       setValues({...values, error: false, [name]: event.target.value});
@@ -53,7 +54,11 @@ const Login = () => {
 
     const redirectOurUser = () => {
         if (redirectToReferrer) {
-            return <Redirect to="/" />
+            if (user && user.role === 1) {
+                return <Redirect to="/admin/dashboard" />
+            } else {
+                return <Redirect to="/user/dashboard" />
+            }
         }
     }
   

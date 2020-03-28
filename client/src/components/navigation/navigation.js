@@ -25,7 +25,7 @@ const Navigation = ( {history} ) => (
             </li>
 
             <li>
-                <Link className='nav-style links' style={isActive(history, '/dashboard')} to='/dashboard'>
+                <Link className='nav-style links' style={isActive(history, '/user/dashboard')} to='/dashboard'>
                     Dashboard
                 </Link>
             </li>

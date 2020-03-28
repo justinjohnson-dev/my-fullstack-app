@@ -17,12 +17,10 @@ class HomePage extends React.Component {
     render() {
         const { user, users } = this.state;
         return (
-            <div className="home-container">
+            <div className="main-container">
                 <h1>Hello!</h1>
-                <p className="message-logout">You can log back out by clicking the click below</p>
-                <p>
-                    <Link className="logout-style" to="/login"><button className="button"><span>Logout</span></button></Link>
-                </p>
+                <p className="message-logout">Welcome to the home page of the application</p>
+                <p className="message-logout">You can now view your dashboard!</p>
             </div>
         );
     }

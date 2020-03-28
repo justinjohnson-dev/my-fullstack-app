@@ -17,17 +17,17 @@ export const signUpUser = (user) => {
 
 export const signIn = (user) => {
     return fetch('http://localhost:5000/api/signin' , {
-      method: "POST",
-      headers: {
-        Accept: 'application/json',
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify(user)
-    }).then(result => {
-      return result.json()
-    }).catch(err => {
-      console.log(err)
-    });
+        method: "POST",
+        headers: {
+            Accept: 'application/json',
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(user)
+        }).then(result => {
+        return result.json()
+        }).catch(err => {
+        console.log(err)
+        });
 };
 
 
