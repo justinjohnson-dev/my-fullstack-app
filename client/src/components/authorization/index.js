@@ -1,7 +1,7 @@
 /* FILE DEDICATED TO ALL CALLS TO BACKEND */
 
 export const signUpUser = (user) => {
-    return fetch('http://localhost:5000/api/signup' , {
+    return fetch('/api/signup' , {
       method: "POST",
       headers: {
         Accept: 'application/json',
@@ -16,7 +16,7 @@ export const signUpUser = (user) => {
 };
 
 export const signIn = (user) => {
-    return fetch('http://localhost:5000/api/signin' , {
+    return fetch('api/signin' , {
         method: "POST",
         headers: {
             Accept: 'application/json',
@@ -45,7 +45,7 @@ export const signout = (next) => {
         localStorage.removeItem('jwt')
         next();
         
-        return fetch('http://localhost:5000/api/signout', {
+        return fetch('/api/signout', {
             method: "GET"
         }).then(result => {
             console.log('signout', result);
