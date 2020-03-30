@@ -9,6 +9,7 @@ import AdminRoute from './components/private_route/admin_route';
 import Signup from './components/signup/signup';
 import Dashboard from './components/dashboard/dashboard'
 import AdminDashboard from './components/dashboard/adminDashboard';
+import AddCategory from './components/admin/addCategory';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/signup" component={Signup} />
           <PrivateRoute path="/user/dashboard" exact component={Dashboard} />
           <AdminRoute path="/admin/dashboard" exact component={AdminDashboard} />
+          <AdminRoute path="/create/category" exact component={AddCategory} />
         </Switch>
     </Router>
   );

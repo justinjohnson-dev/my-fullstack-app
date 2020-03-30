@@ -10,7 +10,7 @@ const uniqueMessage = error => {
             error.message.lastIndexOf(".$") + 2,
             error.message.lastIndexOf("_1")
         );
-        output = " email already exists within database";
+        output = " already exists within database";
     } catch (ex) {
         output = "Unique field already exists";
     }

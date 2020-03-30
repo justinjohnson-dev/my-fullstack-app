@@ -1,0 +1,58 @@
+.category-button {
+    border-radius: 9px;
+    background-color: rgb(223, 146, 94);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px;
+    width: 190px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.category-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.category-button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.category-button:hover span {
+    padding-right: 25px;
+}
+
+.category-button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.main-form {
+    margin-top: 50px;
+    padding: 20px;
+    border: solid #eee;
+}
+
+.created-response, .back-to-dashboard {
+    margin: 0px auto;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    width: 25%;
+}
+
+.nav-link {
+    color: rgb(223, 146, 94);
+}
