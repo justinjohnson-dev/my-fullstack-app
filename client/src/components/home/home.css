@@ -58,3 +58,28 @@
     margin: 3px;
 }
 
+.card-button {
+    width: 175px;
+}
+
+.add-cart {
+    background-color: white;
+    color: rgb(223, 146, 94);
+    border: solid 2px rgb(223, 146, 94);
+}
+
+.product-img {
+    margin: 0px auto;
+    margin-bottom: 10px;
+    width: 300px;
+    height: 300px;
+}
+
+.product-name {
+    font-weight: bold;
+}
+
+.title {
+    margin: 15px;
+    text-align: center;
+}

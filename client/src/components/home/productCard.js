@@ -5,19 +5,19 @@ import ShowImage from './showImage'
 
 const Card = ({product}) => {
     return (
-        <div className="col-4 row match-height">
+        <div className="col-4 match-height">
             <div className="card">
-                <div className="card-header">{product.name}</div>
+                <div className="card-header product-name">{product.name}</div>
                 <div className="card-body">
-                    <ShowImage item={product} url="products" />
+                    <ShowImage className='photo-size' item={product} url="products" />
                     <p>{product.description}</p>
                     <p>${product.price}</p>
                     <Link to="/">
-                        <button className="btn btn-outline-primary mt-2 mb-2 button-space">
-                            View Product
+                        <button className="button card-button">
+                            <span>View Product</span>
                         </button>
-                        <button className="btn btn-outline-warning mt-2 mb-2 button-space">
-                            Add to Cart
+                        <button className="button card-button add-cart">
+                           <span>Add to Cart</span> 
                         </button>
                     </Link>
                 </div>
