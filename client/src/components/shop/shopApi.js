@@ -33,7 +33,7 @@ export const getFilteredProducts = (skip, limit, filters = {}) => {
 export const list = params => {
     const query = queryString.stringify(params);
 
-    return fetch(`api/products?${query}`, {
+    return fetch(`api/products/search?${query}`, {
         method: "GET"
     })
         .then(response => {
