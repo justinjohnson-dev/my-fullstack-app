@@ -11,6 +11,7 @@ import Dashboard from './components/dashboard/dashboard'
 import AdminDashboard from './components/dashboard/adminDashboard';
 import AddCategory from './components/admin/addCategory';
 import AddProduct from './components/admin/addProduct';
+import Shop from './components/shop/shop';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
     <Navigation />
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/shop" exact component={Shop} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <PrivateRoute path="/user/dashboard" exact component={Dashboard} />
