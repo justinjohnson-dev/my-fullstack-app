@@ -103,7 +103,7 @@ const Search = () => {
 
     return (
         <div className="row search-form">
-            <div className="container">{searchForm()}</div>
+            <div className="search-form-style">{searchForm()}</div>
             <div className="container-fluid">{searchedProduct(results)}</div>
         </div>
     );

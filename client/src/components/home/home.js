@@ -37,11 +37,11 @@ const Home = () => {
 
 
     return (
-        <div className="container-fluid">
+        <div className="main-container">
             <Search />
            <h2 className="mb-4 title">Best Sellers</h2>
            <div className="row">
-               {productsBySell.map((product, index) => (<Card key={index} product={product} />))}
+                {productsBySell.map((product, index) => (<Card key={index} product={product} />))}  
            </div>
         </div>
     );
