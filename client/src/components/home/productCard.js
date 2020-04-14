@@ -5,20 +5,22 @@ import ShowImage from './showImage'
 
 const Card = ({product}) => {
     return (
-        <div className="col-4 match-height">
+        <div className="col-4 match-height card-direction">
             <div className="card">
                 <div className="card-header product-name">{product.name}</div>
                 <div className="card-body">
                     <ShowImage className='photo-size' item={product} url="products" />
-                    <p>{product.description.substring(0, 100)}</p>
-                    <p>${product.price}</p>
+                    <p className="product-description">{product.description.substring(0, 100)}</p>
+                    <p className="product-price">${product.price}</p>
                     <Link to="/">
-                        <button className="button card-button">
-                            <span>View Product</span>
-                        </button>
-                        <button className="button card-button add-cart">
-                           <span>Add to Cart</span> 
-                        </button>
+                        <div className="button-container">
+                            <button className="button card-button">
+                                <span>View Product</span>
+                            </button>
+                            <button className="button card-button add-cart">
+                            <span>Add to Cart</span> 
+                            </button>
+                        </div>
                     </Link>
                 </div>
             </div>        

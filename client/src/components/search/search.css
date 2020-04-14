@@ -2,8 +2,10 @@
    padding: 10px;
 }
 
+
+/* row - container */
 .form-sytle {
-    width: 75%;
+    width: 100%;
 }
 
 .button {
@@ -43,4 +45,9 @@
   .button:hover span:after {
     opacity: 1;
     right: 0;
+  }
+
+  .search-form-style {
+    width: 100%;
+    margin: 0px auto;
   }

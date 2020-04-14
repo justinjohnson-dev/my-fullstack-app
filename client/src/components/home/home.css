@@ -1,11 +1,10 @@
 /* @import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300'; */
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-
 .main-container {
     font-family: 'Roboto', sans-serif;
     width: 50%;
-    padding-top: 100px;
+    padding-top: 10px;
     margin: 0px auto;
     text-align: center;
 }
@@ -59,11 +58,13 @@
 }
 
 .card-button {
-    width: 175px;
+    width: 44%;
+    margin-left: 4.5%;
 }
 
 .add-cart {
     background-color: white;
+    margin-left: 2%;
     color: rgb(223, 146, 94);
     border: solid 2px rgb(223, 146, 94);
 }
@@ -82,4 +83,22 @@
 .title {
     margin: 15px;
     text-align: center;
+}
+
+.main-container {
+    width: 70%;
+    margin: 0px auto;
+}
+
+.card-direction {
+    margin-bottom: 2%;
+}
+
+.product-description,
+.product-price {
+    margin-left: 4%;
+}
+
+.product-price {
+    font-weight: bold;
 }
