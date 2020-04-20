@@ -16,7 +16,7 @@ const Login = () => {
     });
   
     // Destructuring from state
-    const { email, password, load, error, redirectToReferrer } = values
+    const { email, password, load, error, redirectToReferrer } = values;
     const { user } = isAuthenticated();
   
     const handleChange = name => event => {

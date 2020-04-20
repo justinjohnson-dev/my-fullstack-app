@@ -10,18 +10,20 @@ const Card = ({product}) => {
                 <div className="card-header product-name">{product.name}</div>
                 <div className="card-body">
                     <ShowImage className='photo-size' item={product} url="products" />
-                    <p className="product-description">{product.description.substring(0, 100)}</p>
-                    <p className="product-price">${product.price}</p>
-                    <Link to="/">
-                        <div className="button-container">
-                            <button className="button card-button">
-                                <span>View Product</span>
-                            </button>
-                            <button className="button card-button add-cart">
-                            <span>Add to Cart</span> 
-                            </button>
-                        </div>
-                    </Link>
+                    <div className="card-body-styling">
+                        <p className="product-description">{product.description.substring(0, 100)}</p>
+                        <p className="product-price">${product.price}</p>
+                        <Link to="/">
+                            <div className="button-container">
+                                <button className="button card-button">
+                                    <span>View Product</span>
+                                </button>
+                                <button className="button card-button add-cart">
+                                <span>Add to Cart</span> 
+                                </button>
+                            </div>
+                        </Link>
+                    </div>
                 </div>
             </div>        
         </div>

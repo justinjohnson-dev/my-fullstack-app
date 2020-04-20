@@ -14,7 +14,7 @@ const Search = () => {
         searched: false
     });
 
-    // destructuring from state
+    // destructuring
     const { categories, category, search, results, searched } = data;
 
     const loadCategories = () => {
