@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { getCategories, list } from '../shop/shopApi'
 import Card from '../home/productCard'
 import './search.css';
+import Home from '../home/home';
 
 const Search = () => {
 
@@ -81,21 +82,19 @@ const Search = () => {
     const searchForm = () => (
         <form className='form-sytle' onSubmit={searchSubmit}>
             <span className="input-group-text">
-                <div className="input-group input-group-lg">
-                    <div className="input-group-prepend">
-                        <select className="btn mr-2" onChange={handleChange("category")}>
-                            <option value="All">Pick Category</option>
-                            {categories.map((c, i) => (
-                                <option key={i} value={c._id}>
-                                    {c.name}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
+                <div className="input-group ">
+                    <select className="btn select-button" onChange={handleChange("category")}>
+                        <option value="All">Pick Category</option>
+                        {categories.map((c, i) => (
+                            <option key={i} value={c._id}>
+                                {c.name}
+                            </option>
+                        ))}
+                    </select>
                     <input type="search" className="form-control" onChange={handleChange("search")} placeholder="Search by name" />
                 </div>
                 <div className="btn input-group-append" style={{border: 'none'}}>
-                    <button className="button"><span>Search</span></button>
+                    <button className="btn search-button">Search</button>
                 </div>
             </span>
         </form>

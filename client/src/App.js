@@ -12,11 +12,13 @@ import AdminDashboard from './components/dashboard/adminDashboard';
 import AddCategory from './components/admin/addCategory';
 import AddProduct from './components/admin/addProduct';
 import Shop from './components/shop/shop';
+import UpperNav from './components/navigation/upper-nav';
 
 
 function App() {
   return (
     <Router>
+    <UpperNav />
     <Navigation />
         <Switch>
           <Route path="/" exact component={Home} />
