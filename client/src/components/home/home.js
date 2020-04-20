@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {getProducts} from './homeApi'
 import Card from './productCard'
-import Search from '../search/search'
 import './home.css';
 
 
@@ -38,7 +37,6 @@ const Home = () => {
 
     return (
         <div className="main-container">
-            <Search />
            <h2 className="mb-4 title">Best Sellers</h2>
            <div className="row">
                 {productsBySell.map((product, index) => (<Card key={index} product={product} />))}  

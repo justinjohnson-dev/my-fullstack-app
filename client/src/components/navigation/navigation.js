@@ -14,10 +14,9 @@ const isActive = (history, path) => {
 
 // Destructuring history
 const Navigation = ( {history} ) => (
-    <nav>
-        <h3 className="logo">JJ Brand</h3>
+    <nav className="main-nav">
         <ul className="nav-links">
-            
+
             <li>
                 <Link className='nav-style links' style={isActive(history, '/')} to='/'>
                     Home

@@ -2,52 +2,34 @@
    padding: 10px;
 }
 
-
 /* row - container */
 .form-sytle {
     width: 100%;
 }
 
-.button {
-    border-radius: 9px;
-    background-color: rgb(223, 146, 94);
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 20px;
-    padding: 5px;
-    width: 100px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-  }
-  
-  .button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-  }
-  
-  .button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-  }
-  
-  .button:hover span {
-    padding-right: 25px;
-  }
-  
-  .button:hover span:after {
-    opacity: 1;
-    right: 0;
-  }
+.search-form-style {
+  width: 100%;
+  margin: 0px auto;
+}
 
-  .search-form-style {
-    width: 100%;
-    margin: 0px auto;
-  }
+.input-group-text {
+  background: black;
+  border: none;
+}
+
+.select-button {
+  color: whitesmoke;
+}
+
+.search-button {
+  color: whitesmoke;
+}
+
+.form-control {
+  height: 30px;
+  margin: auto;
+}
+
+.form-sytle {
+  padding-top: 12px;
+}

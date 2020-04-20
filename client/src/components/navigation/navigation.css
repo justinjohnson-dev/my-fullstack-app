@@ -7,9 +7,11 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background: #eee;
+}
+
+.main-nav {
     min-height: 10vh;
-    background: rgb(73, 79, 82);
-    color: white;
 }
 
 .nav-links {
@@ -21,12 +23,17 @@ nav {
 }
 
 .nav-style {
-    color: white;
+    color: black;
 }
 
 .links:hover {
     color: orange;
     text-decoration: none;
-    font-size: larger;
-    line-height: 15pt;
+}
+
+.upper-nav {
+    position: relative;
+    background: black;
+    color: white;
+    height: 50px;
 }
