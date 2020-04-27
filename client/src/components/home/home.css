@@ -1,12 +1,22 @@
 /* @import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300'; */
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+body {
+    background-color: whitesmoke;
+}
+
 .main-container {
     font-family: 'Roboto', sans-serif;
     width: 50%;
     padding-top: 10px;
     margin: 0px auto;
     text-align: center;
+}
+
+.home-page-title-styling {
+    padding: 5px;
+    font-size: 25px;
+    text-transform: uppercase;
 }
 
 .message-logout {
