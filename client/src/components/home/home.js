@@ -37,7 +37,7 @@ const Home = () => {
 
     return (
         <div className="main-container">
-           <h2 className="mb-4 title">Best Sellers</h2>
+           <h2 className="mb-4 title home-page-title-styling">Best Sellers</h2>
            <div className="row">
                 {productsBySell.map((product, index) => (<Card key={index} product={product} />))}  
            </div>

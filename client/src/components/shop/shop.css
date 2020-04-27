@@ -6,3 +6,27 @@
     width: 15%;
     margin-bottom: 10px;
 }
+
+.product-title-styling {
+    padding: 5px;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.row-width {
+    width: 25%;
+    margin: 0;
+    margin-right: 2px;
+}
+
+.category-filter {
+    margin-top: 20%;
+    float: right;
+    margin-right:0px;
+    width: 50%;
+}
+
+.title-styling {
+    margin: 0px auto;
+    font-size: 18px;
+}
