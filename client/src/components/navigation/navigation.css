@@ -14,10 +14,6 @@ nav {
 }
 
 .nav-links {
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     list-style: none;
 }
 
