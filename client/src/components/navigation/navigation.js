@@ -6,7 +6,7 @@ import { signout, isAuthenticated } from '../authorization/index'
 
 const isActive = (history, path) => {
     if (history.location.pathname === path) {
-        return {color: '#ff9900'}
+        return {color: 'rgb(223, 146, 94)'}
     } else {
         return {color: 'ffffff'}
     }
