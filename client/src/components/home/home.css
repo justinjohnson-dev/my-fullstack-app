@@ -72,6 +72,13 @@ body {
     width: 40%;
 }
 
+@media only screen and (max-width: 1450px) {
+    .card-button {
+        font-size: 12px;
+        width: 45%;
+    }
+  }
+
 .add-cart {
     background-color: white;
     color: rgb(223, 146, 94);
