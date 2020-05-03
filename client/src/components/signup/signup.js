@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './signup.css';
 import {Link} from 'react-router-dom';
 import { API } from '../../config';
@@ -56,7 +56,7 @@ const Signup = () => {
   );
 
   const signUpForm = () => (
-    <form>
+    <form className="signup-form">
       <h2 className='login-alert'>Create Your Account!</h2>
       <div className="form-group">
           <label className="text-muted">Name</label>
@@ -75,7 +75,7 @@ const Signup = () => {
   );
 
   return (
-    <div>
+    <div className="signup-return">
       {showSuccessOnSignUp()}
       {errorWhileSigningUp()}
       {signUpForm()}
