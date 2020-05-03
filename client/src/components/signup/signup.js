@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './signup.css';
+// import './signup.css';
 import {Link} from 'react-router-dom';
 import { API } from '../../config';
 import { signUpUser } from '../authorization/index'
