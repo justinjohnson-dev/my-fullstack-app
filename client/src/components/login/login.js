@@ -67,17 +67,17 @@ const Login = () => {
     }
   
     const signUpForm = () => (
-      <form>
+      <form className="login-form">
         <h2 className='login-alert'>Login to your account!</h2>
         <div className="form-group">
             <label className="text-muted">Email</label>
-            <input onChange={handleChange('email')} type="email" value={email} className="form-control" />
+            <input onChange={handleChange('email')} type="email" value={email} className="form-control" cy-data="email-input" />
         </div>
         <div className="form-group">
             <label className="text-muted">Password</label>
-            <input onChange={handleChange('password')} type="password" value={password} className="form-control" />
+            <input onChange={handleChange('password')} type="password" value={password} className="form-control" cy-data="pass-input" />
         </div>
-        <button onClick={handleSubmit} className="button create-button"><span>Login</span></button>
+        <button onClick={handleSubmit} className="button create-button" cy-data="button-submit"><span>Login</span></button>
       </form>
     );
   

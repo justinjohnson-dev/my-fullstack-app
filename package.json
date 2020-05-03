@@ -10,15 +10,18 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "jest",
+    "mongodb-test": "jest --testPathIgnorePatterns /cypress /client",
     "e2e-local": "cypress run",
     "e2e": "cypress open"
   },
   "author": "Justin Johnson",
   "license": "MIT",
   "dependencies": {
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
     "@shelf/jest-mongodb": "^1.1.5",
     "axios": "^0.19.2",
+    "babel-jest": "^24.9.0",
     "body-parser": "^1.19.0",
     "concurrently": "^5.1.0",
     "cookie-parser": "^1.4.5",
@@ -39,6 +42,7 @@
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "react-tap-event-plugin": "^3.0.3",
+    "react-test-renderer": "^16.13.1",
     "uuid": "^7.0.2"
   },
   "devDependencies": {

@@ -98,7 +98,7 @@ const Shop = () => {
     };
 
     return (
-        <div className="container-fluid main-filter-style">
+        <div className="container-fluid main-filter-style shop-page-div">
             <div className="row row-style">
                 <div className="row-width">
                     <div className="category-filter">
