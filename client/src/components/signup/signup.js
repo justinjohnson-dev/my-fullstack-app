@@ -60,17 +60,17 @@ const Signup = () => {
       <h2 className='login-alert'>Create Your Account!</h2>
       <div className="form-group">
           <label className="text-muted">Name</label>
-          <input onChange={handleChange('name')} type="text" value={name} className="form-control" />
+          <input onChange={handleChange('name')} type="text" value={name} className="form-control" cy-data="name-input" />
       </div>
       <div className="form-group">
           <label className="text-muted">Email</label>
-          <input onChange={handleChange('email')} type="email" value={email} className="form-control" />
+          <input onChange={handleChange('email')} type="email" value={email} className="form-control" cy-data="email-input" />
       </div>
       <div className="form-group">
           <label className="text-muted">Password</label>
-          <input onChange={handleChange('password')} type="password" value={password} className="form-control" />
+          <input onChange={handleChange('password')} type="password" value={password} className="form-control" cy-data="pass-input" />
       </div>
-      <button onClick={handleSubmit} className="button create-button"><span>Create Account</span></button>
+      <button onClick={handleSubmit} className="button create-button" cy-data="button-submit"><span>Create Account</span></button>
     </form>
   );
 
