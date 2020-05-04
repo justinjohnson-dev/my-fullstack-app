@@ -50,7 +50,7 @@ const Signup = () => {
   );
 
   const showSuccessOnSignUp = () => (
-    <div className="alert alert-info" style={{display: success ? '' : 'none'}}>
+    <div className="alert alert-info show-success-signup" style={{display: success ? '' : 'none'}}>
       Your new account has successfully been created! <Link to="/login">Login!</Link>
     </div>
   );
@@ -59,15 +59,15 @@ const Signup = () => {
     <form className="signup-form">
       <h2 className='login-alert'>Create Your Account!</h2>
       <div className="form-group">
-          <label className="text-muted">Name</label>
+          <label className="text-muted name-label">Name</label>
           <input onChange={handleChange('name')} type="text" value={name} className="form-control" cy-data="name-input" />
       </div>
       <div className="form-group">
-          <label className="text-muted">Email</label>
+          <label className="text-muted email-label">Email</label>
           <input onChange={handleChange('email')} type="email" value={email} className="form-control" cy-data="email-input" />
       </div>
       <div className="form-group">
-          <label className="text-muted">Password</label>
+          <label className="text-muted password-label">Password</label>
           <input onChange={handleChange('password')} type="password" value={password} className="form-control" cy-data="pass-input" />
       </div>
       <button onClick={handleSubmit} className="button create-button" cy-data="button-submit"><span>Create Account</span></button>
