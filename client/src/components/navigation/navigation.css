@@ -15,6 +15,10 @@ nav {
 
 .nav-links {
     list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
 }
 
 .nav-style {
