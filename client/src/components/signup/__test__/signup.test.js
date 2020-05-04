@@ -37,16 +37,3 @@ describe('Signup', () => {
         expect(wrapper.find('.show-success-signup').text()).toEqual('Your new account has successfully been created! Login!');
     });
 });
-
-
-describe('testing custom hook', () => {
-    it('successful component render', () => {
-        let results;
-        function HookWrapper() {
-            result = Signup();
-            return null;
-        }
-        mount(<HookWrapper />);
-        expect(results.count).toEqual(0);
-    });
-});
